@@ -15,10 +15,5 @@ run `yarn test`
 ## Contribution rules
 
 * Add your component to `/src/cases/yourfoldername`
-* The component should be simplified version of your production component that you want test
+* The component should be simplified version of your production component that you want to test during haxxorz
 * Add your component and paths to `examples` in `/src/cases/index.js` (follow the pattern)
-
-## Cases covered in this repo
-
-* Non trivial component with description what to test, what not to test & test implementation
-* Component with mocked useParams from reachRouter with ability to specify postId
