@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Router>
-        <ExampleReachParamsMock path="/reachParams/:someId/posts/:postId" />
+        <ExampleReachParamsMock path="/reachParams/:userId/posts/:postId" />
       </Router>
     </div>
   );
