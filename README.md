@@ -16,8 +16,7 @@ run `yarn test`
 
 * Add your component to `/src/cases/yourfoldername`
 * The component should be simplified version of your production component that you want test
-* Add route to your component in `src/App.js`
-* Add link to your route to the navigation in `src/App.js`
+* Add your component and paths to `examples` in `/src/cases/index.js` (follow the pattern)
 
 ## Cases covered in this repo
 

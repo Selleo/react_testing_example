@@ -1,11 +1,18 @@
 import { Router, Link } from "@reach/router";
-import { ExampleReachParamsMock } from "./cases/mock_external_package_with_parameter/ExampleReachParamsMock";
+import examples from "./cases";
 
 function App() {
   return (
     <div>
+      <nav>
+        {examples.map(({ to, linkText }) => (
+          <Link to={to}>{linkText}</Link>
+        ))}
+      </nav>
       <Router>
-        <ExampleReachParamsMock path="/reachParams/:userId/posts/:postId" />
+        {examples.map(({ Component, path }) => (
+          <Component key={path} path={path} />
+        ))}
       </Router>
     </div>
   );
