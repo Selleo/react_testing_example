@@ -18,3 +18,7 @@ run `yarn test`
 * Add your component to `/src/cases/yourfoldername`
 * The component should be simplified version of your production component that you want to test during haxxorz
 * Add your component and paths to `examples` in `/src/cases/index.js` (follow the pattern)
+
+## Additional info
+
+For styling use [react-bootstrap](https://react-bootstrap.github.io/components/alerts)
