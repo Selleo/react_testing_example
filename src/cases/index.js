@@ -1,7 +1,8 @@
 import ExampleReachParamsMock from "./mock_external_package_with_parameter/ExampleReachParamsMock";
-import ExampleWebsocketConnectionMock from "./mock_websocket_connection/ExampleWebsocketConnectionMock"
-import ExampleTestMobileElements from "./test_mobile_elements/ExampleTestMobileElements"
+import ExampleWebsocketConnectionMock from "./mock_websocket_connection/ExampleWebsocketConnectionMock";
+import ExampleTestMobileElements from "./test_mobile_elements/ExampleTestMobileElements";
 import ReactQuerySuccessHandler from "./react_query_success_handler/ReactQuerySuccessHandler";
+import TestComplexHook from "./test_complex_hook/TestComplexHook";
 
 const examples = [
   {
@@ -28,6 +29,12 @@ const examples = [
     to: "/reactQueryHack/123",
     linkText: "ReactQuerySuccessHandlerHack",
   },
+  {
+    Component: TestComplexHook,
+    path: "/complexHook",
+    to: "/complexHook",
+    linkText: "TestComplexHook",
+  },
 ];
 
-export default examples
+export default examples;
