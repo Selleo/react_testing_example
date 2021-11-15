@@ -1,6 +1,9 @@
-import { ExampleReachParamsMock } from "./mock_external_package_with_parameter/ExampleReachParamsMock";
-import ExampleWebsocketConnectionMock from "./mock_websocket_connection/ExampleWebsocketConnectionMock"
-import ExampleTestMobileElements from "./test_mobile_elements/ExampleTestMobileElements"
+import ExampleReachParamsMock from "./mock_external_package_with_parameter/ExampleReachParamsMock";
+import ExampleWebsocketConnectionMock from "./mock_websocket_connection/ExampleWebsocketConnectionMock";
+import ExampleTestMobileElements from "./test_mobile_elements/ExampleTestMobileElements";
+import ReactQuerySuccessHandler from "./react_query_success_handler/ReactQuerySuccessHandler";
+import TestComplexHook from "./test_complex_hook/TestComplexHook";
+import ListWithReordering from "./list_with_reordering/ListWithReordering";
 
 const examples = [
   {
@@ -20,7 +23,25 @@ const examples = [
     path: "/mobileElement",
     to: "/mobileElement",
     linkText: "ExampleTestMobileElements",
+  },
+  {
+    Component: ReactQuerySuccessHandler,
+    path: "/reactQueryHack/:userId",
+    to: "/reactQueryHack/123",
+    linkText: "ReactQuerySuccessHandlerHack",
+  },
+  {
+    Component: TestComplexHook,
+    path: "/complexHook",
+    to: "/complexHook",
+    linkText: "TestComplexHook",
+  },
+  {
+    Component: ListWithReordering,
+    path: "/listWithReordering",
+    to: "/listWithReordering",
+    linkText: "listWithReordering",
   }
 ];
 
-export default examples
+export default examples;
