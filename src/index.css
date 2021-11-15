@@ -15,3 +15,7 @@ body {
 .row > *:first-child {
   border-right: 1px solid #ccc;
 }
+
+code {
+  color: white !important;
+}
