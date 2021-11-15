@@ -3,7 +3,7 @@ import { getPostById, getUserById } from "./api";
 import { useEffect, useState } from "react";
 import { useParams } from "@reach/router";
 
-export const ExampleReachParamsMock = () => {
+const ExampleReachParamsMock = () => {
   const { userId, postId } = useParams();
 
   const [user, setUser] = useState();
@@ -46,3 +46,5 @@ export const ExampleReachParamsMock = () => {
     </div>
   );
 };
+
+export default ExampleReachParamsMock
