@@ -4,6 +4,7 @@ import ExampleTestMobileElements from "./test_mobile_elements/ExampleTestMobileE
 import ReactQuerySuccessHandler from "./react_query_success_handler/ReactQuerySuccessHandler";
 import TestComplexHook from "./test_complex_hook/TestComplexHook";
 import ListWithReordering from "./list_with_reordering/ListWithReordering";
+import ExampleRouter from "./test_router/ExampleRouter";
 
 const examples = [
   {
@@ -41,6 +42,12 @@ const examples = [
     path: "/listWithReordering",
     to: "/listWithReordering",
     linkText: "listWithReordering",
+  },
+  {
+    Component: ExampleRouter,
+    path: "/exampleRouter/*",
+    to: "/exampleRouter",
+    linkText: "ExampleRouter",
   }
 ];
 
