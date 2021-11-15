@@ -3,6 +3,7 @@ import ExampleWebsocketConnectionMock from "./mock_websocket_connection/ExampleW
 import ExampleTestMobileElements from "./test_mobile_elements/ExampleTestMobileElements";
 import ReactQuerySuccessHandler from "./react_query_success_handler/ReactQuerySuccessHandler";
 import TestComplexHook from "./test_complex_hook/TestComplexHook";
+import ListWithReordering from "./list_with_reordering/ListWithReordering";
 
 const examples = [
   {
@@ -35,6 +36,12 @@ const examples = [
     to: "/complexHook",
     linkText: "TestComplexHook",
   },
+  {
+    Component: ListWithReordering,
+    path: "/listWithReordering",
+    to: "/listWithReordering",
+    linkText: "listWithReordering",
+  }
 ];
 
 export default examples;

@@ -13,7 +13,7 @@ const Navigation = () => {
         Main
       </Nav.Link>
       {examples.map(({ to, linkText }) => (
-        <Nav.Link as={Link} to={to} href={to}>
+        <Nav.Link as={Link} to={to} href={to} key={to}>
           {linkText}
         </Nav.Link>
       ))}
@@ -21,4 +21,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation
+export default Navigation;
