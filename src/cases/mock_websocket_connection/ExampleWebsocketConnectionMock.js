@@ -11,7 +11,14 @@ const ExampleWebsocketConnectionMock = () => {
     const ws = new WebSocket("ws://localhost:8080");
 
     ws.onopen = () => {
-      console.log("connected");
+      ws.send(
+        JSON.stringify({
+          type: "message",
+          payload: {
+            message: "new connection",
+          },
+        })
+      );
     };
 
     ws.onmessage = (event) => {
@@ -60,6 +67,7 @@ const ExampleWebsocketConnectionMock = () => {
         <input
           type="text"
           value={inputValue}
+          placeholder="Your message"
           onChange={({ target: { value } }) => setInputValue(value)}
         />
         <button disabled={!inputValue}>Send</button>
