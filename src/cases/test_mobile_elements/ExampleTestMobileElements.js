@@ -6,7 +6,10 @@ const ExampleTestMobileElements = () => {
 
   return (
     <div>
-      <h3>{isMobileView ? "Mobile view" : "Desktop view"}</h3>
+      <h3>
+        <span>{isMobileView ? "Mobile" : "Desktop"}</span>
+        <p>view</p>
+      </h3>
     </div>
   );
 };
