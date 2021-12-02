@@ -5,6 +5,7 @@ import ReactQuerySuccessHandler from "./react_query_success_handler/ReactQuerySu
 import TestComplexHook from "./test_complex_hook/TestComplexHook";
 import ListWithReordering from "./list_with_reordering/ListWithReordering";
 import ExampleRouter from "./test_router/ExampleRouter";
+import RemountAfterRedirect from "./remount_after_redirect/RemountAfterRedirect";
 
 const examples = [
   {
@@ -48,7 +49,13 @@ const examples = [
     path: "/exampleRouter/*",
     to: "/exampleRouter",
     linkText: "ExampleRouter",
-  }
+  },
+  {
+    Component: RemountAfterRedirect,
+    path: "/remountAfterRedirect/:id",
+    to: "/remountAfterRedirect/123",
+    linkText: "RemountAfterRedirect",
+  },
 ];
 
 export default examples;
