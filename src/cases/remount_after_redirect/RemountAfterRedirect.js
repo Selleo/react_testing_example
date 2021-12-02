@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { useNavigate, useParams } from "@reach/router";
+import { useHistory, useParams } from "react-router-dom";
 
 const RemountAfterRedirect = () => {
-  const navigate = useNavigate();
+  let history = useHistory();
   const { id } = useParams();
   useEffect(() => {
     return () => {
@@ -11,7 +11,8 @@ const RemountAfterRedirect = () => {
   }, []);
 
   useEffect(() => {
-    navigate(`/remountAfterRedirect/${getId()}-with-slug`, {
+    console.log("mount");
+    history.replace(`/remountAfterRedirect/${getId()}-with-slug`, {
       replace: true,
     });
   }, []);

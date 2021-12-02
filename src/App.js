@@ -1,29 +1,23 @@
-import { Router } from "@reach/router";
-import examples from "./cases";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Main from "./Main";
-import Navigation from "./Navigation";
+import RemountAfterRedirect from "./cases/remount_after_redirect/RemountAfterRedirect";
 
 function App() {
   return (
-    <Container>
-      <Row>
-        <Col md={3}>
-          <Router>
-            <Navigation default />
-          </Router>
-        </Col>
-        <Col>
-          <Router>
-            <Main path="/" />
-            {examples.map(({ Component, path }) => (
-              <Component key={path} path={path} />
-            ))}
-          </Router>
-        </Col>
-      </Row>
-    </Container>
+    <Router>
+      <Container>
+        <Row>
+          <Col>
+            <Switch>
+              <Route path="/remountAfterRedirect/:id">
+                <RemountAfterRedirect />
+              </Route>
+            </Switch>
+          </Col>
+        </Row>
+      </Container>
+    </Router>
   );
 }
 

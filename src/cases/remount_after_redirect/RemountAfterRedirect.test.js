@@ -1,23 +1,30 @@
 import { render, screen } from "@testing-library/react";
+import { Router, Switch, Route } from "react-router-dom";
+import { createMemoryHistory } from "history";
 import RemountAfterRedirect from "./RemountAfterRedirect";
-import { Router, navigate } from "@reach/router";
 
-const renderMockComponent = () => {
-  navigate("/remountAfterRedirect/123");
+const renderTestComponent = () => {
+  const history = createMemoryHistory(["/remountAfterRedirect/123"]);
+  history.push("/remountAfterRedirect/123");
 
-  return render(
-    <Router>
-      <RemountAfterRedirect path="/remountAfterRedirect/:id" />
-    </Router>
-  );
+  return {
+    ...render(
+      <Router history={history}>
+        <Switch>
+          <Route path="/remountAfterRedirect/:id">
+            <RemountAfterRedirect />
+          </Route>
+        </Switch>
+      </Router>
+    ),
+    history,
+  };
 };
 
 describe("RemountAfterRedirect", () => {
-  it("sets adds the slug in url when entering without providing slug", async () => {
-    renderMockComponent();
-
-    expect(screen.getByText("param: 123")).toBeInTheDocument();
-
-    expect(await screen.findByText("param: 123-with-slug")).toBeInTheDocument();
+  it("sets adds the slug in url when entering without providing slug", () => {
+    const { debug, history } = renderTestComponent();
+    console.log(history.location.pathname);
+    debug();
   });
 });
