@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import ListItem from "./ListItem";
 
-const defaultItems = [
+export const defaultItems = [
   { id: "1", name: "Item1: Suspendisse porttitor mattis purus. In." },
   { id: "2", name: "Item2: Vestibulum fermentum risus quis magna." },
   { id: "3", name: "Item3: Phasellus lacinia eget metus nec." },
