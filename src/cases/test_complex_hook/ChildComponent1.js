@@ -10,7 +10,7 @@ const ChildComponent1 = () => {
     <Card>
       <Card.Body>
         <Card.Title>
-          Initial 73, no multiplayer, only adding: {current}
+          Initial 73, default random multiplayer, only adding: {current}
         </Card.Title>
         <Card.Text>
           <InputGroup className="mb-3">

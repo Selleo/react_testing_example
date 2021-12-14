@@ -6,9 +6,17 @@ const useNumberWithMultiplier = ({
   initial = 0,
   multiplier = getDefaultMultiplayer(),
   initialFreeze = false,
-}) => {
-  const [freeze, setFreeze] = useState(initialFreeze);
+} = {}) => {
+  if (typeof initialFreeze !== "boolean") {
+    throw Error("Initial freeze has to be boolean");
+  }
+
+  if (typeof initial !== "number") {
+    throw Error("Initial has to be an integer");
+  }
+
   const [current, setCurrent] = useState(initial);
+  const [freeze, setFreeze] = useState(initialFreeze);
 
   if (multiplier === 0) {
     throw Error("Multiplier cannot be 0");
@@ -39,7 +47,7 @@ const useNumberWithMultiplier = ({
       }
 
       if (value < 0) {
-        setCurrent((curr) => curr - value);
+        setCurrent((curr) => curr + value);
       } else if (value > 0) {
         throw Error("Value is more than 0. Use addToCurrent");
       }
