@@ -14,10 +14,10 @@ const ReactQuerySuccessHandler = ({ userId }) => {
 
   const { data, isSuccess } = useQuery(["user", { userId }], queryFunction, {
     staleTime: Infinity,
-    onSuccess: (data) => {
-      // NOT reliable way of handling initialization stuff with Infinity stale time
-      setLogMessage(`User: ${data.name} message initialized: ${Date.now()}`);
-    },
+    // onSuccess: (data) => {
+    //   // NOT reliable way of handling initialization stuff with Infinity stale time
+    //   setLogMessage(`User: ${data.name} message initialized: ${Date.now()}`);
+    // },
   });
 
   useEffect(() => {
