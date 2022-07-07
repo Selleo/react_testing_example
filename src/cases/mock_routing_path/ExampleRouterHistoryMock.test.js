@@ -1,31 +1,21 @@
 import { render, screen } from "@testing-library/react";
-import ExampleReachParamsMock from "./ExampleReachParamsMock";
-import { Router } from "@reach/router";
-
-let mockUserId = 123;
-let mockPostId = 456;
-jest.mock("@reach/router", () => {
-  return {
-    ...jest.requireActual("@reach/router"),
-    useParams: () => ({ userId: mockUserId, postId: mockPostId }),
-  };
-});
+import ExampleRouterHistoryMock from "./ExampleRouterHistoryMock";
+import { createHistory, createMemorySource, LocationProvider, Router } from "@reach/router";
 
 const renderWithParams = ({ userId, postId } = {}) => {
-  mockUserId = userId;
-  mockPostId = postId;
+  const source = createMemorySource(`/users/${userId}/posts/${postId}`);
+  const history = createHistory(source);
 
-  // Wrapping in <Router> is not needed here as we only use mocked version of useParams
-  // however in bigger apps other hooks might be used deep in the tree
-  // and mocking all imports would not be worth it.
   render(
-    <Router>
-      <ExampleReachParamsMock default userId={userId} postId={postId} />
-    </Router>
+    <LocationProvider history={history}>
+      <Router>
+        <ExampleRouterHistoryMock path="/users/:userId/posts/:postId" />
+      </Router>
+    </LocationProvider>
   );
 };
 
-describe("ExampleReachParamsMock", () => {
+describe("ExampleRouterHistoryMock", () => {
   it("displays user not loaded", () => {
     renderWithParams();
 
